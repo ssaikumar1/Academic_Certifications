@@ -1,0 +1,40 @@
+{
+  "canisters": {
+    "academic_ecertificates_backend": {
+      "main": "src/academic_ecertificates_backend/main.mo",
+      "type": "motoko"
+    },
+    "internet_identity": {
+      "type": "custom",
+      "candid": "https://github.com/dfinity/internet-identity/releases/download/release-2024-02-02/internet_identity.did",
+      "wasm": "https://github.com/dfinity/internet-identity/releases/download/release-2024-02-02/internet_identity_dev.wasm.gz",
+      "remote": {
+        "id": {
+          "ic": "rdmx6-jaaaa-aaaaa-aaadq-cai"
+        }
+      },
+      "frontend": {}
+    },
+    "academic_ecertificates_frontend": {
+      "dependencies": [
+        "academic_ecertificates_backend"
+      ],
+      "frontend": {
+        "entrypoint": "src/academic_ecertificates_frontend/src/index.html"
+      },
+      "source": [
+        "src/academic_ecertificates_frontend/assets",
+        "dist/academic_ecertificates_frontend/"
+      ],
+      "type": "assets"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": "mops sources"
+    }
+  },
+  "output_env_file": ".env",
+  "version": 1
+}

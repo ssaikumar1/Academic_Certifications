@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>University Profile</title>
+    <script src="bootstrap.bundle.min.js"
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <script src="jquery.min.js"></script>
+    <script src="index.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .navbar-custom {
+            background-color: #673AB7;
+        }
+
+        .navbar-custom .nav-link,
+        .navbar-custom .navbar-brand {
+            color: #ffffff;
+            border-radius: 8px;
+            border: 2px solid #673AB7;
+            margin-left: 10px;
+        }
+
+        .navbar-custom .nav-link:hover {
+            border-radius: 8px;
+            border: 2px solid #ffffff;
+            color: #663ab7;
+            background-color: #ffffff;
+        }
+
+        .navbar-custom .navbar-toggler {
+            border-color: #ffffff;
+            color: #ffffff;
+            background: #ffffff;
+        }
+
+        .activee {
+            color: #673AB7 !important;
+            background-color: #ffffff;
+            box-sizing: border-box;
+            border-radius: 8px;
+        }
+
+        .dropdown-item {
+            background-color: #ffffff;
+            color: #673AB7;
+        }
+
+        .dropdown-item:hover {
+            background-color: #673AB7;
+            color: #ffffff;
+        }
+
+
+        .dropdown-menu.show {
+            background-color: #ffffff !important;
+        }
+
+        .outer-border {
+            width: 800px;
+            height: 650px;
+            padding: 20px;
+            text-align: center;
+            border: 10px solid #673AB7;
+            margin: auto;
+        }
+
+        .inner-dotted-border {
+            width: 750px;
+            height: 600px;
+            padding: 20px;
+            text-align: center;
+            border: 5px solid #673AB7;
+            border-style: dotted;
+        }
+
+        .certification {
+            font-size: 50px;
+            font-weight: bold;
+            color: #663ab7;
+        }
+
+        .certify {
+            font-size: 25px;
+        }
+
+        .name {
+            font-size: 30px;
+            color: green;
+        }
+
+        .fs-30 {
+            font-size: 30px;
+        }
+
+        .fs-20 {
+            font-size: 20px;
+        }
+
+        .btn-primary {
+            background-color: #663ab7;
+            border-color: #663ab7;
+        }
+
+        .btn-primary:hover {
+            background-color: rgba(103, 58, 183, 0.8);
+            border-color: #663ab7;
+        }
+
+        .btn-primary:active {
+            background-color: #663ab7;
+            border-color: #663ab7;
+        }
+
+        @media screen and (width >= 701px){
+            .uni{
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+            }
+
+            .uni h5{
+                flex: 1;
+                justify-content: flex-start;
+                align-items: center;
+                margin: 0!important;
+            }
+
+            .uni p{
+                flex: 2;
+                justify-content: flex-start;
+                margin: 0!important;
+            }
+
+            .Cert_table{
+                width: 70%!important;
+            }
+            
+            .container{
+                width: 100%!important;
+            }
+        }
+
+        .table_contents{
+                overflow-x: auto!important;
+        }
+
+        @media screen and (width <= 700px) {
+            .Cert_table{
+                margin-inline: 10px!important;
+            }
+
+            .container-fluid{
+                flex-wrap: nowrap!important;
+            }
+
+            .table_contents{
+                overflow-x: auto!important;
+            }
+
+            .container{
+                width: 90%!important;
+                overflow: hidden!important;
+            }
+
+            .uni{
+                padding: 10px;
+                align-items: center;
+                justify-content: center;
+            }
+
+        }
+
+        .uni:nth-child(even) , .tbl_row:nth-child(even){
+            background: rgba(0,0,0,.05);
+        }
+
+        .Cert_table th,td{
+            border: 1px solid #000;
+            padding: 5px;
+            text-align: center;
+        }
+
+        .Cert_table{
+            width: 90%;
+            margin: auto;
+            margin-top: 50px;
+        }
+
+        .ic_interface{
+            cursor: pointer;
+        }
+    
+    </style>
+
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-sm navbar-custom sticky-top justify-content-end">
+        <div class="container-fluid overflow-hidden">
+            <a class="navbar-brand  mb-0 h1" href="#">
+                E-Certificate Verification
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a href="certificates.html" id="logout-btn" class="nav-link"><i class="fa-regular fa-file-lines"></i> Certificates</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="profile.html" id="logout-btn" class="nav-link activee"><i class="fa-solid fa-user"></i> Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="logout-btn" class="nav-link ic_interface"><i class="fa-solid fa-link-slash"></i> Disconnect</a>
+                    </li>
+                </div>
+            </div>
+        </div>
+    </nav><br>
+
+    <!--sno,register no,name,branch,grad date,actions-->
+
+    <div style="padding-top: 20px;" class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header">
+                        <h4>University Profile</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="details_Wrapper">
+                            <div class="uni">
+                                <h5>Name :</h5>
+                                <p id="uname">DVR & DR. HS MIC COLEGGE OF TECHNOLOGY</p>
+                            </div>
+                            <div class="uni">
+                                <h5>Established Year :</h5>
+                                <p id="uestd_yr">2000</p>
+                            </div>
+                            <div class="uni">
+                                <h5>Phone  :</h5>
+                                <p id="uphno">+91 9192434567</p>
+                            </div>
+                            <div class="uni">
+                                <h5>Email :</h5>
+                                <p id="uemail">contact@mictech.com</p>
+                            </div>
+                            <div class="uni">
+                                <h5>Address :</h5>
+                                <p id="uaddress">NH 9, Vijayawada - Hyderabad Hwy, Kanchikacherla, Andhra Pradesh 521180</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="contoast" data-count="0" class="toast-container position-fixed bottom-0 end-0 p-3"></div>
+</body>
+
+</html>
